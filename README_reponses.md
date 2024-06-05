@@ -1,6 +1,13 @@
 EXO 1
 
     Donnez sous forme de camembert la répartition des genres.
+    pour rélisé ce camembert nous avons utilisé des commandes pour séparer les double des string et on les place dans des variables X et Y.
+    X = csvRead('data.csv',[],[],'double')
+    Y = csvRead('data.csv',[],[],'double')
+    et enfin nous avons utilisé cette commande pour afficher le camembert
+    pie([sum(find(genre == "Female")),sum(find(genre == "Male")),sum(find(genre == "Other"))])
+
+
     Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
     Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
     Quelle est la profession la plus fréquente des femmes ? des hommes ?
