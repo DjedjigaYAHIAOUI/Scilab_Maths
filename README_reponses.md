@@ -1,3 +1,5 @@
+Djedjiga
+
 EXO 1
  X = csvRead('data.csv',[],[],'double') ==> les chiffres
     Y = csvRead('data.csv',[],[],'double') ==>female et males
