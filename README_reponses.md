@@ -1,4 +1,4 @@
-
+aaa
 
 EXO 1
  X = csvRead('data.csv',[],[],'double') ==> les chiffres
@@ -13,8 +13,7 @@ EXO 1
 
 
 
-
-<img src="moustache_age.png" alt="reseultat" />
+![texte](camembert_genre_1.1.png)
 
 
 
