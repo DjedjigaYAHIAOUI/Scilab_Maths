@@ -11,7 +11,7 @@ EXO 1
         ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
     pie(genre(2),genre(1))                              //fais sous forme d'un camembert représentant les genres en fonction de leur occurence
 
-![Description de l'image](camembert_genre_1.1.png)
+![Description de l'image][moustache_age.png]
 
 
 
@@ -196,3 +196,5 @@ Je crée 3 tableaux pour séparer les genres sur
 J'affiche ensuite le diagramme
 --> legend("homme","femme","other")
 --> bar([y_hommes y_femmes y_other], 'grouped');
+
+[def]: camembert_genre_1.1.png
