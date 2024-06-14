@@ -15,6 +15,9 @@ EXO 1
 
 
 
+<img src="moustache_age.png" alt="reseultat" />
+
+
 
    2) Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
 
