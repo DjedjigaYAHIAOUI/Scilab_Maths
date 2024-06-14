@@ -11,6 +11,11 @@ EXO 1
         ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
     pie(genre(2),genre(1))                              //fais sous forme d'un camembert représentant les genres en fonction de leur occurence
 
+![Description de l'image](camembert_genre_1.1.png)
+
+
+
+
    2) Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
 
 genre_lvl = [csvString(:,3),csvString(:,4)]                                     // crée une matrice 6699x2 avec les genres et le niveau d'études
@@ -131,7 +136,7 @@ mean(age_6_other)					                    //39.571429
 exp_6_other = csvDouble(indice_6_other,6)
 mean(exp_6_other)					                    //16.428571
 
-
+//ajouter une image ici//
   
 EXO2
 
