@@ -43,7 +43,7 @@ bar(lvlEtude,temp);
 legend("homme","femme","autre")
 
 
-
+![niveaux d'etude](niveaux_etude_1_2.png)
 
     3) Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
 
