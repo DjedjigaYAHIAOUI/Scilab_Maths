@@ -43,7 +43,9 @@
     bar(lvlEtude,temp);
     legend("homme","femme","autre")
     </pre>
-    ![Répartition des niveaux d'études suivant le genre](niveaux_etude_1_2.png)</div>
+        <img src="camembert_genre_1.1.png" alt="Répartition des genres">
+
+    </div>
 
 <div style="background-color: #f0f8ff; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
     <h2>Question 3</h2>
