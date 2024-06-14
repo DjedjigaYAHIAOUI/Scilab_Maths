@@ -1,4 +1,3 @@
-# Data Analysis Report
 
 <div style="background-color: #f0f8ff; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
     <h2>Question 1</h2>
