@@ -12,7 +12,7 @@
         ->genre(2)
     pie(genre(2),genre(1))
     </pre>
-    ![Répartition des genres](camembert_genre_1.1.png)
+    <img src="camembert_genre_1.1.png" alt="Répartition des genres">
 </div>
 
 <div style="background-color: #f0f8ff; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
@@ -44,7 +44,7 @@
     bar(lvlEtude,temp);
     legend("homme","femme","autre")
     </pre>
-    ![Répartition des niveaux d'études suivant le genre](niveaux_etude_1_2.png)
+    <img src="niveaux_etude_1_2.png" alt="Répartition des niveaux d'études suivant le genre">
 </div>
 
 <div style="background-color: #f0f8ff; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
@@ -162,7 +162,6 @@
     </pre>
 </div>
 
-  
 EXO2
 
     Donnez sous forme d'histogrammes la distributions des ages.
