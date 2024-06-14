@@ -1,4 +1,4 @@
-Djedjiga
+
 
 EXO 1
  X = csvRead('data.csv',[],[],'double') ==> les chiffres
