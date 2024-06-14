@@ -11,7 +11,6 @@ EXO 1
         ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
     pie(genre(2),genre(1))                              //fais sous forme d'un camembert représentant les genres en fonction de leur occurence
 
-![Description de l'image][moustache_age.png]
 
 
 
