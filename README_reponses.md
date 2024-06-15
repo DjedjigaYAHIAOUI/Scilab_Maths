@@ -54,7 +54,7 @@ matrice_occurence = [occu(1:1),occu(2:2),occu(3:3),occu(4:4),occu(5:5),occu(6:6)
 bar(matrice_occurence)                                              //affiche l'histogramme des 10 professions avec le plus de monde
 legend(profession(indice(1:10)))                                    //légende le graphe pour donner un nom à chaque colonne
 
-[effectif]()
+[effectif](effectif_metiers.png)
 //question
    4)  Quelle est la profession la plus fréquente des femmes ? des hommes ?
 //reponse
