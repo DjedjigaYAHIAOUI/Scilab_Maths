@@ -159,7 +159,12 @@ histplot(34,exp);
 **Résultat:**
 
 ![histogramme de la distribution de l'experience](exo2_2.png)
-2. Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
+
+
+**Question 3:** Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
+
+**Réponse:**
+'''scilab
 Q = quart(age)
 IQR = Q(3) - Q(1) 
 min_age = min(age);
@@ -172,9 +177,15 @@ freq = histc(ages, unique_vals);
 [max_freq, max_index] = max(freq);
 age_mode = unique_vals(max_index);
 
-3. A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
+**Question 4** A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
+
+**Réponse:**
  atomsInstall("stixbox");
  boxplot(age);
+
+ ![moustache] (moustache_age.png)
+
+
 
 4. Refaire les questions précédentes pour l'expérience.
 Q = quart(exp) 
