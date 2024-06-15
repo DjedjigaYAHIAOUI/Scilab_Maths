@@ -1,4 +1,4 @@
-#EXO 1:
+# EXO 1:
  X = csvRead('data.csv',[],[],'double') ==> les chiffres
     Y = csvRead('data.csv',[],[],'double') ==>female et males
 
@@ -134,15 +134,17 @@ exp_6_other = csvDouble(indice_6_other,6)
 mean(exp_6_other)					                    //16.428571
 
   
-EXO2
 
 # EXO2 
-1. Donnez sous forme d'histogrammes la distribution des ages.
+**question**1. Donnez sous forme d'histogrammes la distribution des ages.
+**Réponse:**
+'''scilab
 age = X(:, 2);
 min_age = min(age); 
 max_age = max(age);  
 histplot(41,age);
-
+'''
+![histogrammes de la disctribution des ages](exo2_2.png)
 1. Donnez sous forme d'histogrammes la distribution de l'expérience.
 exp = X(:,6);
 min_xp = min(exp);
