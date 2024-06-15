@@ -2,13 +2,11 @@
 **Données:**
 
 
-    X = csvRead('data.csv',[],[],'double') ==> les chiffres
-    Y = csvRead('data.csv',[],[],'double') ==>female et males
+    *X = csvRead('data.csv',[],[],'double') ==> les chiffres
+    *Y = csvRead('data.csv',[],[],'double') ==>female et males
 
 
-  **Question 1:** 
-  
-   Donnez sous forme de camembert la répartition des genres.
+  **Question 1:**  Donnez sous forme de camembert la répartition des genres.
 
 
 * genre = tabul(csvString(:,3),"i")            
@@ -18,10 +16,12 @@
 
 
         ->genre(1)
-        ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
+        ->genre(2)                                      
+&#x2794; Donne l'occurence correspondant aux valeurs de "genre(1)"
 
 
-    pie(genre(2),genre(1))                              //fais sous forme d'un camembert la representation des genres en fonction de leur occurence
+    pie(genre(2),genre(1))                              
+&#x2794; fais sous forme d'un camembert la representation des genres en fonction de leur occurence
 
 
 **Résultat**
@@ -30,63 +30,75 @@
 ![texte](camembert_genre_1.1.png)
 
 
-  **Question 2:**
-  
-   Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
+  **Question 2:** Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
 
 **Reponse:**
 
 
-genre_lvl = [csvString(:,3),csvString(:,4)]                                     // crée une matrice 6699x2 avec les genres et le niveau d'études
+genre_lvl = [csvString(:,3),csvString(:,4)]                                     
+&#x2794; crée une matrice 6699x2 avec les genres et le niveau d'études
 
-high_homme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Male"))     // renvoie l'occurence d'hommes ayant un niveau d'étude de 0
-
-
-high_femme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Female"))   // renvoie l'occurence des femmes ayant un niveau d'étude de 0
-
-
-high_autre = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Other"))    // renvoie l'occurence des autres ayant un niveau d'étude de 0
-
-b_homme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence d'hommes ayant un niveau d'étude de 1
+high_homme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Male"))     
+&#x2794; renvoie l'occurence d'hommes ayant un niveau d'étude de 0
 
 
-b_femme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 1
+high_femme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Female"))   
+&#x2794; renvoie l'occurence des femmes ayant un niveau d'étude de 0
 
 
-b_autre = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 1
+high_autre = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Other"))    
+&#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 0
+
+b_homme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Male"))        
+&#x2794;  renvoie l'occurence d'hommes ayant un niveau d'étude de 1
 
 
-
-m_homme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence des hommes ayant un niveau d'étude de 2
-
-
-m_femme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 2
+b_femme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Female"))      
+&#x2794;  renvoie l'occurence des femmes ayant un niveau d'étude de 1
 
 
-m_autre = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 2
+b_autre = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Other"))       
+&#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 1
 
 
 
-d_homme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence des hommes ayant un niveau d'étude de 3
+m_homme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Male"))        
+&#x2794; renvoie l'occurence des hommes ayant un niveau d'étude de 2
 
 
-d_femme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 3
+m_femme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Female"))      
+&#x2794; renvoie l'occurence des femmes ayant un niveau d'étude de 2
 
 
-d_autre = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 3
+m_autre = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Other"))       
+&#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 2
 
 
 
-temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_femme, m_autre;d_homme, d_femme, d_autre]   //crée un tableau 
+d_homme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Male"))        
+&#x2794; renvoie l'occurence des hommes ayant un niveau d'étude de 3
 
 
-lvlEtude = [0,1,2,3]
+d_femme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Female"))      
+&#x2794;  renvoie l'occurence des femmes ayant un niveau d'étude de 3
 
 
-bar(lvlEtude,temp);
+d_autre = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Other"))       
+&#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 3
 
 
-legend("homme","femme","autre")
+
+temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_femme, m_autre;d_homme, d_femme, d_autre]   
+&#x2794; crée un tableau 
+
+
+==>   lvlEtude = [0,1,2,3]
+
+
+==>   bar(lvlEtude,temp);
+
+
+==>  legend("homme","femme","autre")
 
 **Résultat:**
 
