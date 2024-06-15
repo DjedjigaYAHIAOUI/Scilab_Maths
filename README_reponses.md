@@ -1,12 +1,23 @@
 # EXO 1:
- X = csvRead('data.csv',[],[],'double') ==> les chiffres
+**Données:**
+
+
+    X = csvRead('data.csv',[],[],'double') ==> les chiffres
     Y = csvRead('data.csv',[],[],'double') ==>female et males
 
 
-   1) Donnez sous forme de camembert la répartition des genres.
+  **Question 1:** 
+  
+   Donnez sous forme de camembert la répartition des genres.
+
+
     genre = tabul(csvString(:,3),"i")                   //cela permet de récupèrer la liste des genres ainsi que leur occurence
+
+
         ->genre(1)
         ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
+
+
     pie(genre(2),genre(1))                              //fais sous forme d'un camembert la representation des genres en fonction de leur occurence
 
 
@@ -14,44 +25,97 @@
 ![texte](camembert_genre_1.1.png)
 
 
-   2) Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
-//reponse
+  **Question 2:**
+  
+   Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
+
+**Reponse:**
+
+
 genre_lvl = [csvString(:,3),csvString(:,4)]                                     // crée une matrice 6699x2 avec les genres et le niveau d'études
 
 high_homme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Male"))     // renvoie l'occurence d'hommes ayant un niveau d'étude de 0
+
+
 high_femme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Female"))   // renvoie l'occurence des femmes ayant un niveau d'étude de 0
+
+
 high_autre = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Other"))    // renvoie l'occurence des autres ayant un niveau d'étude de 0
 
 b_homme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence d'hommes ayant un niveau d'étude de 1
+
+
 b_femme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 1
+
+
 b_autre = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 1
 
+
+
 m_homme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence des hommes ayant un niveau d'étude de 2
+
+
 m_femme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 2
+
+
 m_autre = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 2
 
+
+
 d_homme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Male"))        // renvoie l'occurence des hommes ayant un niveau d'étude de 3
+
+
 d_femme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Female"))      // renvoie l'occurence des femmes ayant un niveau d'étude de 3
+
+
 d_autre = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Other"))       // renvoie l'occurence des autres ayant un niveau d'étude de 3
 
+
+
 temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_femme, m_autre;d_homme, d_femme, d_autre]   //crée un tableau 
+
+
 lvlEtude = [0,1,2,3]
+
+
 bar(lvlEtude,temp);
+
+
 legend("homme","femme","autre")
 
 
 ![niveaux d'etude](niveaux_etude_1_2.png)
-//question
-    3) Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
-//reponse
+
+**Question3:**
+
+
+Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
+
+**Réponse:**
+
+
 metiers = tabul(csvString(:,5),"i")                                 //récupère la liste des profession ainsi que leur occurence
-[occu,indice] = gsort(metiers(2))                                   //donne la liste des occurence trié ainsi que l'indice que son indice avant le tri
+
+
+[occu,indice] = gsort(metiers(2))                                   //donne la liste des occurence trié ainsi que l'indice que son indice avant le 
+
+
 profession = metiers(1)                                             //stock la liste des profession dans une variable
+
+
 matrice_occurence = [occu(1:1),occu(2:2),occu(3:3),occu(4:4),occu(5:5),occu(6:6),occu(7:7),occu(8:8),occu(9:9),occu(10:10)]
+
+
 bar(matrice_occurence)                                              //affiche l'histogramme des 10 professions avec le plus de monde
+
+
 legend(profession(indice(1:10)))                                    //légende le graphe pour donner un nom à chaque colonne
 
+
+
 ![effectif](effectif_metiers.png)
+
+
    4)  Quelle est la profession la plus fréquente des femmes ? des hommes ?
 //reponse
 indice_female = find(csvString(:,3) == "Female")        //récupère les indice de la colonne 3 de data.csv contenant "Female"
@@ -166,10 +230,20 @@ histplot(34,exp);
 **Réponse:**
 '''scilab
 Q = quart(age)
+
+
 IQR = Q(3) - Q(1) 
+
+
 min_age = min(age);
+
+
 max_age = max(age);
+
+
 mean(age)
+
+
 median(age)
 
 unique_vals = unique(age);
@@ -183,7 +257,7 @@ age_mode = unique_vals(max_index);
  atomsInstall("stixbox");
  boxplot(age);
 
- ![moustache] (moustache_age.png)
+ ![moustache](moustache_age.png)
 
 
 
