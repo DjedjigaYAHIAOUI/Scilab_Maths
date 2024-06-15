@@ -2,8 +2,8 @@
 **Données:**
 
 
-    *X = csvRead('data.csv',[],[],'double') ==> les chiffres
-    *Y = csvRead('data.csv',[],[],'double') ==>female et males
+* X = csvRead('data.csv',[],[],'double') ==> les chiffres
+* Y = csvRead('data.csv',[],[],'double') ==>female et males
 
 
   **Question 1:**  Donnez sous forme de camembert la répartition des genres.
@@ -35,60 +35,60 @@
 **Reponse:**
 
 
-genre_lvl = [csvString(:,3),csvString(:,4)]                                     
+* genre_lvl = [csvString(:,3),csvString(:,4)]                                     
 &#x2794; crée une matrice 6699x2 avec les genres et le niveau d'études
 
-high_homme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Male"))     
+* high_homme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Male"))     
 &#x2794; renvoie l'occurence d'hommes ayant un niveau d'étude de 0
 
 
-high_femme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Female"))   
+* high_femme = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Female"))   
 &#x2794; renvoie l'occurence des femmes ayant un niveau d'étude de 0
 
 
-high_autre = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Other"))    
+* high_autre = length(find(genre_lvl(:,2) == "0" & genre_lvl(:,1) == "Other"))    
 &#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 0
 
-b_homme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Male"))        
+* b_homme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Male"))        
 &#x2794;  renvoie l'occurence d'hommes ayant un niveau d'étude de 1
 
 
-b_femme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Female"))      
+* b_femme = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Female"))      
 &#x2794;  renvoie l'occurence des femmes ayant un niveau d'étude de 1
 
 
-b_autre = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Other"))       
+* b_autre = length(find(genre_lvl(:,2) == "1" & genre_lvl(:,1) == "Other"))       
 &#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 1
 
 
 
-m_homme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Male"))        
+* m_homme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Male"))        
 &#x2794; renvoie l'occurence des hommes ayant un niveau d'étude de 2
 
 
-m_femme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Female"))      
+* m_femme = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Female"))      
 &#x2794; renvoie l'occurence des femmes ayant un niveau d'étude de 2
 
 
-m_autre = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Other"))       
+* m_autre = length(find(genre_lvl(:,2) == "2" & genre_lvl(:,1) == "Other"))       
 &#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 2
 
 
 
-d_homme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Male"))        
+* d_homme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Male"))        
 &#x2794; renvoie l'occurence des hommes ayant un niveau d'étude de 3
 
 
-d_femme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Female"))      
+* d_femme = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Female"))      
 &#x2794;  renvoie l'occurence des femmes ayant un niveau d'étude de 3
 
 
-d_autre = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Other"))       
+* d_autre = length(find(genre_lvl(:,2) == "3" & genre_lvl(:,1) == "Other"))       
 &#x2794; renvoie l'occurence des autres ayant un niveau d'étude de 3
 
 
 
-temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_femme, m_autre;d_homme, d_femme, d_autre]   
+* temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_femme, m_autre;d_homme, d_femme, d_autre]   
 &#x2794; crée un tableau 
 
 
@@ -105,30 +105,41 @@ temp = [high_homme, high_femme, high_autre;b_homme, b_femme, b_autre;m_homme, m_
 
 ![niveaux d'etude](niveaux_etude_1_2.png)
 
-**Question3:**
-
-
-Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
+**Question3:** Donnez sous forme d'histogramme, les effectifs des 10 professions les plus représentées.
 
 **Réponse:**
 
 
-metiers = tabul(csvString(:,5),"i")                                 //récupère la liste des profession ainsi que leur occurence
+* metiers = tabul(csvString(:,5),"i")                                 
 
 
-[occu,indice] = gsort(metiers(2))                                   //donne la liste des occurence trié ainsi que l'indice que son indice avant le 
+&#x2794; récupère la liste des profession ainsi que leur occurence
 
 
-profession = metiers(1)                                             //stock la liste des profession dans une variable
+* [occu,indice] = gsort(metiers(2))                                   
 
 
-matrice_occurence = [occu(1:1),occu(2:2),occu(3:3),occu(4:4),occu(5:5),occu(6:6),occu(7:7),occu(8:8),occu(9:9),occu(10:10)]
+&#x2794; donne la liste des occurence trié ainsi que l'indice que son indice avant le 
 
 
-bar(matrice_occurence)                                              //affiche l'histogramme des 10 professions avec le plus de monde
+* profession = metiers(1)                                             
 
 
-legend(profession(indice(1:10)))                                    //légende le graphe pour donner un nom à chaque colonne
+&#x2794; stock la liste des profession dans une variable
+
+
+* matrice_occurence = [occu(1:1),occu(2:2),occu(3:3),occu(4:4),occu(5:5),occu(6:6),occu(7:7),occu(8:8),occu(9:9),occu(10:10)]
+
+
+* bar(matrice_occurence)                                              
+
+
+&#x2794; affiche l'histogramme des 10 professions avec le plus de monde
+
+
+* legend(profession(indice(1:10)))                                    
+
+&#x2794; légende le graphe pour donner un nom à chaque colonne
 
 
 **Résultat:**
@@ -136,48 +147,72 @@ legend(profession(indice(1:10)))                                    //légende l
 
 ![effectif](effectif_metiers.png)
 
-**Question 4:**
+
+**Question 4:**  Quelle est la profession la plus fréquente des femmes ? des hommes ?
+
+**Réponse:**
 
 
-4)  Quelle est la profession la plus fréquente des femmes ? des hommes ?
+* indice_female = find(csvString(:,3) == "Female")        
 
-**Re^ponse:**
-
-
-indice_female = find(csvString(:,3) == "Female")        //récupère les indice de la colonne 3 de data.csv contenant "Female"
+&#x2794;récupère les indice de la colonne 3 de data.csv contenant "Female"
 
 
-[valeurs] = csvString(indice_female,5)                  //récupère les métiers situés aux indices récupérés précédemment
+* [valeurs] = csvString(indice_female,5)                  
+
+&#x2794;récupère les métiers situés aux indices récupérés précédemment
 
 
-metiers_female = tabul(valeurs)                         //récupère les métiers sans doublons ainsi que leur occurence
+* metiers_female = tabul(valeurs)                         
+
+&#x2794;récupère les métiers sans doublons ainsi que leur occurence
 
 
-[occurence_tri,indice_tri] = gsort(metiers_female(2))   //récupère et trie dans un tableau ce qu'on a relevé précédemment et relève leur indice d'avant
+* [occurence_tri,indice_tri] = gsort(metiers_female(2))   
+
+&#x2794;récupère et trie dans un tableau ce qu'on a relevé précédemment et relève leur indice d'avant
 
 
-liste_metiers_female = metiers_female(1)                //récupère dans une variable la liste des métiers unique dans le but de la parcourir par indice
+* liste_metiers_female = metiers_female(1)                
+
+&#x2794;récupère dans une variable la liste des métiers unique dans le but de la parcourir par indice
 
 
-liste_metiers_female(119)                               //relève le métiers recensant le plus de femmes
+* liste_metiers_female(119)                               
+
+&#x2794;relève le métiers recensant le plus de femmes
 
 
 
- indice_male = find(csvString(:,3) == "Male")            //récupère les les indice de la colonne 3 de data.csv contenant "Male"
+ * indice_male = find(csvString(:,3) == "Male")            
+ 
+ &#x2794;récupère les les indice de la colonne 3 de data.csv contenant "Male"
 
-[valeurs2] = csvString(indice_male,5)                   //récupère les métiers situés aux indices récupérés précédemment
+* [valeurs2] = csvString(indice_male,5)                   
 
-metiers_male = tabul(valeurs2)                          //récupère les métiers sans doublons ainsi que leur occurence
+&#x2794;récupère les métiers situés aux indices récupérés précédemment
 
-[occurence_tri,indice_tri] = gsort(metiers_male(2))     //récupère et trie dans un tableau ce qu'on a relevé précédemment et relève leur indice d'avant
+* metiers_male = tabul(valeurs2)                          
+
+&#x2794;récupère les métiers sans doublons ainsi que leur occurence
+
+* [occurence_tri,indice_tri] = gsort(metiers_male(2))     
+
+&#x2794;récupère et trie dans un tableau ce qu'on a relevé précédemment et relève leur indice d'avant
 
 
-liste_metiers_male = metiers_male(1)                    //récupère dans une variable la liste des métiers unique dans le but de la parcourir par 
-indice
+* liste_metiers_male = metiers_male(1)                    
+
+&#x2794;récupère dans une variable la liste des métiers unique dans le but de la parcourir par indice
 
 
-liste_metiers_male(11)                                  //relève le métiers recensant le plus d'hommes
+* liste_metiers_male(11)                                  
 
+
+&#x2794; relève le métiers recensant le plus d'hommes
+
+
+**Cela renvoie comme réponse:**
  _________       _______________________
 |**Homme**| ==> | **Software Engineer** |
 |_________|     |_______________________|
@@ -188,93 +223,123 @@ liste_metiers_male(11)                                  //relève le métiers re
 |_________|     |____________________|
 
 
-  **Question5:**
-Pour chaque niveau d'études, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
+  **Question5:**   Pour chaque niveau d'études, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
+
+
 **Reponse:**
 
-indice_high = find(csvDouble(:,4) == 0 )
+* indice_high = find(csvDouble(:,4) == 0 )
 
 
-salaire_high = csvDouble(indice_high,7)
+* salaire_high = csvDouble(indice_high,7)
 
 
-mean(salaire_high)                                      //36706.694
+* mean(salaire_high)                                      
+
+&#x2794; *Cela donne comme résulatat:* 36706.694
 
 
-age_high = csvDouble(indice_high,2)
+* age_high = csvDouble(indice_high,2)
 
 
-mean(age_high)                                          //26.854911
+* mean(age_high)                                          
 
 
-exp_high = csvDouble(indice_high,6)
+&#x2794; *Cela donne comme résulatat:* 26.854911
 
 
-mean(exp_high)                                          //1.9151786
+* exp_high = csvDouble(indice_high,6)
 
 
+* mean(exp_high)                                          
 
-indice_b = find(csvDouble(:,4) == 1 )
-
-
-salaire_b = csvDouble(indice_b,7)
-mean(salaire_b)                                         //95082.909
-
-
-age_b = csvDouble(indice_b,2)
-
-
-mean(age_b)                                             //30.260179
-
-
-exp_b = csvDouble(indice_b,6)
-
-
-mean(exp_b)                                             //5.4195631
+&#x2794; *Cela donne comme résulatat:* 1.9151786
 
 
 
-indice_m = find(csvDouble(:,4) == 2 )
+* indice_b = find(csvDouble(:,4) == 1 )
 
 
-salaire_m = csvDouble(indice_m,7)
+* salaire_b = csvDouble(indice_b,7)
 
 
-mean(salaire_m)                                         //130112.06
+* mean(salaire_b)                                         
+
+&#x2794; *Cela donne comme résulatat:* 95082.909
 
 
-age_m = csvDouble(indice_m,2)
+* age_b = csvDouble(indice_b,2)
 
 
-mean(age_m)                                             //35.171505
+* mean(age_b)                                             
+
+&#x2794; *Cela donne comme résulatat:* 30.260179
 
 
-exp_m = csvDouble(indice_m,6)
+* exp_b = csvDouble(indice_b,6)
 
 
-mean(exp_m)                                             //9.6456989
+* mean(exp_b)                                             
+
+&#x2794; *Cela donne comme résulatat:* 5.4195631
 
 
 
-indice_p = find(csvDouble(:,4) == 3)
+* indice_m = find(csvDouble(:,4) == 2 )
 
 
-salaire_p = csvDouble(indice_p,7)
+* salaire_m = csvDouble(indice_m,7)
 
 
-mean(salaire_p)                                         //165651.46
+* mean(salaire_m)                                         
+
+&#x2794; *Cela donne comme résulatat:* 130112.06
 
 
-age_p = csvDouble(indice_p,2)
+* age_m = csvDouble(indice_m,2)
 
 
-mean(age_p)                                             //41.154858
+* mean(age_m)                                             
 
 
-exp_p = csvDouble(indice_p,6)
+&#x2794; *Cela donne comme résulatat:* 35.171505
 
 
-mean(exp_p)                                             //13.915267
+* exp_m = csvDouble(indice_m,6)
+
+
+* mean(exp_m)                                             
+
+&#x2794; *Cela donne comme résulatat:* 9.6456989
+
+
+
+* indice_p = find(csvDouble(:,4) == 3)
+
+
+* salaire_p = csvDouble(indice_p,7)
+
+
+* mean(salaire_p)                                         
+
+&#x2794; *Cela donne comme résulatat:* 165651.46
+
+
+* age_p = csvDouble(indice_p,2)
+
+
+* mean(age_p)                                             
+
+
+&#x2794; *Cela donne comme résulatat:* 41.154858
+
+
+* exp_p = csvDouble(indice_p,6)
+
+
+* 0mean(exp_p)                                             
+
+&#x2794; *Cela donne comme résulatat:* 13.915267
 
 
 **Question 6:**
@@ -290,19 +355,25 @@ indice_6_female = find(csvString(:,3) == "Female" )
 salaire_6_female = csvDouble(indice_6_female,7)
 
 
-mean(salaire_6_female)					                //107889.00
+mean(salaire_6_female)					                
+
+&#x2794; *Cela donne comme résulatat:*107889.00
 
 
 age_6_female = csvDouble(indice_6_female,2)
 
 
-mean(age_6_female)					                    //32.626286
+mean(age_6_female)					                    
+
+&#x2794; *Cela donne comme résulatat:*32.626286
 
 
 exp_6_female = csvDouble(indice_6_female,6)
 
 
-mean(exp_6_female)					                    //7.4201792
+mean(exp_6_female)					                    
+
+&#x2794; *Cela donne comme résulatat:*7.4201792
 
 
 
@@ -312,19 +383,25 @@ indice_6_male = find(csvString(:,3) == "Male" )
 salaire_6_male = csvDouble(indice_6_male,7)
 
 
-mean(salaire_6_male)					                //121389.87
+mean(salaire_6_male)					                
+
+&#x2794; *Cela donne comme résulatat:*121389.87
 
 
 age_6_male = csvDouble(indice_6_male,2)
 
 
-mean(age_6_male)					                    //34.416394
+mean(age_6_male)					                    
+
+&#x2794; *Cela donne comme résulatat:*34.416394
 
 
 exp_6_male = csvDouble(indice_6_male,6)
 
 
-mean(exp_6_male)					                    //8.6169662
+mean(exp_6_male)					                    
+
+&#x2794; *Cela donne comme résulatat:*8.6169662
 
 
 indice_6_other = find(csvString(:,3) == "Other" )
@@ -333,30 +410,40 @@ indice_6_other = find(csvString(:,3) == "Other" )
 salaire_6_other = csvDouble(indice_6_other,7)
 
 
-mean(salaire_6_other)					                //125869.86
+mean(salaire_6_other)					                
+
+&#x2794; *Cela donne comme résulatat:*125869.86
 
 
 **.**age_6_other = csvDouble(indice_6_other,2)
 
 
-mean(age_6_other)					                    //39.571429
+mean(age_6_other)					                    
+
+&#x2794; *Cela donne comme résulatat:*39.571429
 
 
 exp_6_other = csvDouble(indice_6_other,6)
 
 
-mean(exp_6_other)					                    //16.428571
+mean(exp_6_other)					                    
+
+&#x2794; *Cela donne comme résulatat:*16.428571
 
   
 
 # EXO2 
 **question 1:** Donnez sous forme d'histogrammes la distribution des ages.
+
+
 **Réponse:**
-'''scilab
+
 age = X(:, 2);
 min_age = min(age); 
 max_age = max(age);  
 histplot(41,age);
+
+
 **Resultat:**
 
 
