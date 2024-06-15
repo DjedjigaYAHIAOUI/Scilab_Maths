@@ -418,7 +418,7 @@
 
 * mean(age_6_other)					                    
 
-&#x2794; *Cela donne comme résultat:*39.571429
+&#x2794; *Cela donne comme résultat:* 39.571429
 
 
 * exp_6_other = csvDouble(indice_6_other,6)
@@ -430,16 +430,18 @@
 
   
 
-# EXO2 
+# EXO 2:
+
+
 **question 1:** Donnez sous forme d'histogrammes la distribution des ages.
 
 
 **Réponse:**
 
-age = X(:, 2);
-min_age = min(age); 
-max_age = max(age);  
-histplot(41,age);
+* age = X(:, 2);
+* min_age = min(age); 
+* max_age = max(age);  
+* histplot(41,age);
 
 
 **Resultat:**
@@ -449,12 +451,16 @@ histplot(41,age);
 
 
 **Question2:** Donnez sous forme d'histogrammes la distribution de l'expérience.
+
+
 **Réponse:**
 
-exp = X(:,6);
-min_xp = min(exp);
-max_xp = max(exp);
-histplot(34,exp);
+* exp = X(:,6);
+* min_xp = min(exp);
+* max_xp = max(exp);
+* histplot(34,exp);
+
+
 **Résultat:**
 
 ![histogramme de la distribution de l'experience](exo2_2.png)
@@ -463,54 +469,62 @@ histplot(34,exp);
 **Question 3:** Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
 
 **Réponse:**
-'''scilab
-Q = quart(age)
+
+* Q = quart(age)
 
 
-IQR = Q(3) - Q(1) 
+==> IQR = Q(3) - Q(1) 
 
 
-min_age = min(age);
+* min_age = min(age);
 
 
-max_age = max(age);
+* max_age = max(age);
 
 
-mean(age)
+* mean(age)
 
 
-median(age)
+* median(age)
 
-unique_vals = unique(age);
-freq = histc(ages, unique_vals);
-[max_freq, max_index] = max(freq);
-age_mode = unique_vals(max_index);
+* unique_vals = unique(age);
+* freq = histc(ages, unique_vals);
+* [max_freq, max_index] = max(freq);
+* age_mode = unique_vals(max_index);
 
-**Question 4** A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
+**Question 4:** A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
 
 **Réponse:**
- atomsInstall("stixbox");
- boxplot(age);
+
+
+ * atomsInstall("stixbox");
+ * boxplot(age);
+
+**Résultat:**
+
 
  ![moustache](moustache_age.png)
 
 
 
-4. Refaire les questions précédentes pour l'expérience.
-Q = quart(exp) 
-IQR = Q(3) - Q(1)
-min_xp = min(exp); 
-max_xp = max(exp); 
-mean(exp)
-median(exp)
+**Question 4:** Refaire les questions précédentes pour l'expérience.
 
-Unique_vals = unique(exp);
-Freq = histc(exp, Unique_vals);
-[max_Freq, max_Index] = max(Freq);
-exp_mode = Unique_vals(max_Index);
 
-boxplot(exp);
+* Q = quart(exp) 
+* IQR = Q(3) - Q(1)
+* min_xp = min(exp); 
+* max_xp = max(exp); 
+* mean(exp)
+* median(exp)
 
+* Unique_vals = unique(exp);
+* Freq = histc(exp, Unique_vals);
+* [max_Freq, max_Index] = max(Freq);
+* exp_mode = Unique_vals(max_Index);
+
+* boxplot(exp);
+
+![boite à moustache](moustache_experience.png)
 
 
 
