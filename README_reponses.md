@@ -163,73 +163,173 @@ indice
 
 liste_metiers_male(11)                                  //relève le métiers recensant le plus d'hommes
 
-|     |  
-|Homme|
-|____| 
+ _________       _______________________
+|**Homme**| ==> | **Software Engineer** |
+|_________|     |_______________________|
 
-                                                        // homme = Software Engineer //
+                                                        
+ _________       ____________________
+|**Femme**| ==> | **Data Scientist** |
+|_________|     |____________________|
 
-                                                          // femme = Data Scientist //
-   5)  Pour chaque niveau d'études, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
-//reponse
+
+  **Question5:**
+Pour chaque niveau d'études, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
+**Reponse:**
+
 indice_high = find(csvDouble(:,4) == 0 )
+
+
 salaire_high = csvDouble(indice_high,7)
+
+
 mean(salaire_high)                                      //36706.694
+
+
 age_high = csvDouble(indice_high,2)
+
+
 mean(age_high)                                          //26.854911
+
+
 exp_high = csvDouble(indice_high,6)
+
+
 mean(exp_high)                                          //1.9151786
 
+
+
 indice_b = find(csvDouble(:,4) == 1 )
+
+
 salaire_b = csvDouble(indice_b,7)
 mean(salaire_b)                                         //95082.909
+
+
 age_b = csvDouble(indice_b,2)
+
+
 mean(age_b)                                             //30.260179
+
+
 exp_b = csvDouble(indice_b,6)
+
+
 mean(exp_b)                                             //5.4195631
 
+
+
 indice_m = find(csvDouble(:,4) == 2 )
+
+
 salaire_m = csvDouble(indice_m,7)
+
+
 mean(salaire_m)                                         //130112.06
+
+
 age_m = csvDouble(indice_m,2)
+
+
 mean(age_m)                                             //35.171505
+
+
 exp_m = csvDouble(indice_m,6)
+
+
 mean(exp_m)                                             //9.6456989
 
+
+
 indice_p = find(csvDouble(:,4) == 3)
+
+
 salaire_p = csvDouble(indice_p,7)
+
+
 mean(salaire_p)                                         //165651.46
+
+
 age_p = csvDouble(indice_p,2)
+
+
 mean(age_p)                                             //41.154858
+
+
 exp_p = csvDouble(indice_p,6)
+
+
 mean(exp_p)                                             //13.915267
 
 
-   6)  Pour chaque genre, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
-r
+**Question 6:**
+
+Pour chaque genre, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
+
+
+**Réponse:**
+
 indice_6_female = find(csvString(:,3) == "Female" )
+
+
 salaire_6_female = csvDouble(indice_6_female,7)
+
+
 mean(salaire_6_female)					                //107889.00
+
+
 age_6_female = csvDouble(indice_6_female,2)
+
+
 mean(age_6_female)					                    //32.626286
+
+
 exp_6_female = csvDouble(indice_6_female,6)
+
+
 mean(exp_6_female)					                    //7.4201792
 
+
+
 indice_6_male = find(csvString(:,3) == "Male" )
+
+
 salaire_6_male = csvDouble(indice_6_male,7)
+
+
 mean(salaire_6_male)					                //121389.87
+
+
 age_6_male = csvDouble(indice_6_male,2)
+
+
 mean(age_6_male)					                    //34.416394
+
+
 exp_6_male = csvDouble(indice_6_male,6)
+
+
 mean(exp_6_male)					                    //8.6169662
 
 
 indice_6_other = find(csvString(:,3) == "Other" )
+
+
 salaire_6_other = csvDouble(indice_6_other,7)
+
+
 mean(salaire_6_other)					                //125869.86
+
+
 age_6_other = csvDouble(indice_6_other,2)
+
+
 mean(age_6_other)					                    //39.571429
+
+
 exp_6_other = csvDouble(indice_6_other,6)
+
+
 mean(exp_6_other)					                    //16.428571
 
   
