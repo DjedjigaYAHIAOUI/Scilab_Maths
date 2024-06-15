@@ -136,21 +136,29 @@ mean(exp_6_other)					                    //16.428571
   
 
 # EXO2 
-**question**1. Donnez sous forme d'histogrammes la distribution des ages.
+**question 1:** Donnez sous forme d'histogrammes la distribution des ages.
 **Réponse:**
 '''scilab
 age = X(:, 2);
 min_age = min(age); 
 max_age = max(age);  
 histplot(41,age);
-'''
+**Resultat:**
+
+
 ![histogrammes de la disctribution des ages](exo2_2.png)
-1. Donnez sous forme d'histogrammes la distribution de l'expérience.
+
+
+**Question2:** Donnez sous forme d'histogrammes la distribution de l'expérience.
+**Réponse:**
+
 exp = X(:,6);
 min_xp = min(exp);
 max_xp = max(exp);
 histplot(34,exp);
+**Résultat:**
 
+![histogramme de la distribution de l'experience](exo2_2.png)
 2. Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
 Q = quart(age)
 IQR = Q(3) - Q(1) 
