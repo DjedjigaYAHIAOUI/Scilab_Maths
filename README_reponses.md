@@ -236,7 +236,7 @@
 
 * mean(salaire_high)                                      
 
-&#x2794; *Cela donne comme résulatat:* 36706.694
+&#x2794; *Cela donne comme résultat:* 36706.694
 
 
 * age_high = csvDouble(indice_high,2)
@@ -245,7 +245,7 @@
 * mean(age_high)                                          
 
 
-&#x2794; *Cela donne comme résulatat:* 26.854911
+&#x2794; *Cela donne comme résultat:* 26.854911
 
 
 * exp_high = csvDouble(indice_high,6)
@@ -253,7 +253,7 @@
 
 * mean(exp_high)                                          
 
-&#x2794; *Cela donne comme résulatat:* 1.9151786
+&#x2794; *Cela donne comme résultat:* 1.9151786
 
 
 
@@ -265,7 +265,7 @@
 
 * mean(salaire_b)                                         
 
-&#x2794; *Cela donne comme résulatat:* 95082.909
+&#x2794; *Cela donne comme résultat:* 95082.909
 
 
 * age_b = csvDouble(indice_b,2)
@@ -273,7 +273,7 @@
 
 * mean(age_b)                                             
 
-&#x2794; *Cela donne comme résulatat:* 30.260179
+&#x2794; *Cela donne comme résultat:* 30.260179
 
 
 * exp_b = csvDouble(indice_b,6)
@@ -281,7 +281,7 @@
 
 * mean(exp_b)                                             
 
-&#x2794; *Cela donne comme résulatat:* 5.4195631
+&#x2794; *Cela donne comme résultat:* 5.4195631
 
 
 
@@ -293,7 +293,7 @@
 
 * mean(salaire_m)                                         
 
-&#x2794; *Cela donne comme résulatat:* 130112.06
+&#x2794; *Cela donne comme résultat:* 130112.06
 
 
 * age_m = csvDouble(indice_m,2)
@@ -302,7 +302,7 @@
 * mean(age_m)                                             
 
 
-&#x2794; *Cela donne comme résulatat:* 35.171505
+&#x2794; *Cela donne comme résultat:* 35.171505
 
 
 * exp_m = csvDouble(indice_m,6)
@@ -310,7 +310,7 @@
 
 * mean(exp_m)                                             
 
-&#x2794; *Cela donne comme résulatat:* 9.6456989
+&#x2794; *Cela donne comme résultat:* 9.6456989
 
 
 
@@ -322,7 +322,7 @@
 
 * mean(salaire_p)                                         
 
-&#x2794; *Cela donne comme résulatat:* 165651.46
+&#x2794; *Cela donne comme résultat:* 165651.46
 
 
 * age_p = csvDouble(indice_p,2)
@@ -331,7 +331,7 @@
 * mean(age_p)                                             
 
 
-&#x2794; *Cela donne comme résulatat:* 41.154858
+&#x2794; *Cela donne comme résultat:* 41.154858
 
 
 * exp_p = csvDouble(indice_p,6)
@@ -339,7 +339,7 @@
 
 * 0mean(exp_p)                                             
 
-&#x2794; *Cela donne comme résulatat:* 13.915267
+&#x2794; *Cela donne comme résultat:* 13.915267
 
 
 **Question 6:**
@@ -357,7 +357,7 @@ salaire_6_female = csvDouble(indice_6_female,7)
 
 mean(salaire_6_female)					                
 
-&#x2794; *Cela donne comme résulatat:*107889.00
+&#x2794; *Cela donne comme résultat:*107889.00
 
 
 age_6_female = csvDouble(indice_6_female,2)
@@ -365,7 +365,7 @@ age_6_female = csvDouble(indice_6_female,2)
 
 mean(age_6_female)					                    
 
-&#x2794; *Cela donne comme résulatat:*32.626286
+&#x2794; *Cela donne comme résultat:*32.626286
 
 
 exp_6_female = csvDouble(indice_6_female,6)
@@ -373,7 +373,7 @@ exp_6_female = csvDouble(indice_6_female,6)
 
 mean(exp_6_female)					                    
 
-&#x2794; *Cela donne comme résulatat:*7.4201792
+&#x2794; *Cela donne comme résultat:*7.4201792
 
 
 
@@ -385,7 +385,7 @@ salaire_6_male = csvDouble(indice_6_male,7)
 
 mean(salaire_6_male)					                
 
-&#x2794; *Cela donne comme résulatat:*121389.87
+&#x2794; *Cela donne comme résultat:*121389.87
 
 
 age_6_male = csvDouble(indice_6_male,2)
@@ -393,7 +393,7 @@ age_6_male = csvDouble(indice_6_male,2)
 
 mean(age_6_male)					                    
 
-&#x2794; *Cela donne comme résulatat:*34.416394
+&#x2794; *Cela donne comme résultat:*34.416394
 
 
 exp_6_male = csvDouble(indice_6_male,6)
@@ -401,7 +401,7 @@ exp_6_male = csvDouble(indice_6_male,6)
 
 mean(exp_6_male)					                    
 
-&#x2794; *Cela donne comme résulatat:*8.6169662
+&#x2794; *Cela donne comme résultat:*8.6169662
 
 
 indice_6_other = find(csvString(:,3) == "Other" )
@@ -412,7 +412,7 @@ salaire_6_other = csvDouble(indice_6_other,7)
 
 mean(salaire_6_other)					                
 
-&#x2794; *Cela donne comme résulatat:*125869.86
+&#x2794; *Cela donne comme résultat:*125869.86
 
 
 **.**age_6_other = csvDouble(indice_6_other,2)
@@ -420,7 +420,7 @@ mean(salaire_6_other)
 
 mean(age_6_other)					                    
 
-&#x2794; *Cela donne comme résulatat:*39.571429
+&#x2794; *Cela donne comme résultat:*39.571429
 
 
 exp_6_other = csvDouble(indice_6_other,6)
@@ -428,7 +428,7 @@ exp_6_other = csvDouble(indice_6_other,6)
 
 mean(exp_6_other)					                    
 
-&#x2794; *Cela donne comme résulatat:*16.428571
+&#x2794; *Cela donne comme résultat:*16.428571
 
   
 
