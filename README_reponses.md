@@ -11,7 +11,7 @@
    Donnez sous forme de camembert la répartition des genres.
 
 
-    genre = tabul(csvString(:,3),"i")                   //cela permet de récupèrer la liste des genres ainsi que leur occurence
+**.** genre = tabul(csvString(:,3),"i")                   //cela permet de récupèrer la liste des genres ainsi que leur occurence
 
 
         ->genre(1)
@@ -321,7 +321,7 @@ salaire_6_other = csvDouble(indice_6_other,7)
 mean(salaire_6_other)					                //125869.86
 
 
-age_6_other = csvDouble(indice_6_other,2)
+**.**age_6_other = csvDouble(indice_6_other,2)
 
 
 mean(age_6_other)					                    //39.571429
