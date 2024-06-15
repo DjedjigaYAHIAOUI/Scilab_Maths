@@ -524,7 +524,7 @@
 
 * boxplot(exp);
 
-![boite à moustache](moustache_experience.png)
+![boite à moustache](exo2_2.png)
 
 
 
