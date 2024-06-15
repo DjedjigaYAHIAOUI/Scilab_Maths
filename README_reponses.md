@@ -11,9 +11,10 @@
    Donnez sous forme de camembert la répartition des genres.
 
 
-* genre = tabul(csvString(:,3),"i")                   
+* genre = tabul(csvString(:,3),"i")            
 
-'U+2794' cela permet de récupèrer la liste des genres ainsi que leur occurence
+
+&#x2794; cela permet de récupèrer la liste des genres ainsi que leur occurence
 
 
         ->genre(1)
