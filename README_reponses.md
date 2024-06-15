@@ -1,22 +1,19 @@
-aaa
-
-EXO 1
+#EXO 1:
  X = csvRead('data.csv',[],[],'double') ==> les chiffres
     Y = csvRead('data.csv',[],[],'double') ==>female et males
 
 
-   //question// 1) Donnez sous forme de camembert la répartition des genres.
-   //repense genre = tabul(csvString(:,3),"i")                   //cela permet de récupèrer la liste des genres ainsi que leur occurence
-        ->genre(1)                                     
+   1) Donnez sous forme de camembert la répartition des genres.
+    genre = tabul(csvString(:,3),"i")                   //cela permet de récupèrer la liste des genres ainsi que leur occurence
+        ->genre(1)
         ->genre(2)                                      //donne l'occurence correspondant aux valeurs de "genre(1)"
-    pie(genre(2),genre(1))                              //fais sous forme d'un camembert représentant les genres en fonction de leur occurence
+    pie(genre(2),genre(1))                              //fais sous forme d'un camembert la representation des genres en fonction de leur occurence
 
 
 
 ![texte](camembert_genre_1.1.png)
 
 
-//question
    2) Donnez sous forme d'histogramme la répartition des niveaux d'études, suivants le genre.
 //reponse
 genre_lvl = [csvString(:,3),csvString(:,4)]                                     // crée une matrice 6699x2 avec les genres et le niveau d'études
@@ -55,7 +52,6 @@ bar(matrice_occurence)                                              //affiche l'
 legend(profession(indice(1:10)))                                    //légende le graphe pour donner un nom à chaque colonne
 
 ![effectif](effectif_metiers.png)
-//question
    4)  Quelle est la profession la plus fréquente des femmes ? des hommes ?
 //reponse
 indice_female = find(csvString(:,3) == "Female")        //récupère les indice de la colonne 3 de data.csv contenant "Female"
@@ -75,7 +71,6 @@ liste_metiers_male(11)                                  //relève le métiers re
                                                         // homme = Software Engineer //
 
                                                           // femme = Data Scientist //
-//question
    5)  Pour chaque niveau d'études, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
 //reponse
 indice_high = find(csvDouble(:,4) == 0 )
@@ -110,7 +105,6 @@ mean(age_p)                                             //41.154858
 exp_p = csvDouble(indice_p,6)
 mean(exp_p)                                             //13.915267
 
-//question
 
    6)  Pour chaque genre, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
 r
@@ -139,18 +133,53 @@ mean(age_6_other)					                    //39.571429
 exp_6_other = csvDouble(indice_6_other,6)
 mean(exp_6_other)					                    //16.428571
 
-//ajouter une image ici//
   
 EXO2
 
-    Donnez sous forme d'histogrammes la distributions des ages.
-    Donnez sous forme d'histogrammes la distributions de l'expérience.
-    Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
-    A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
-    Refaire les questions précédentes pour l'expérience.
+# EXO2 
+1. Donnez sous forme d'histogrammes la distribution des ages.
+age = X(:, 2);
+min_age = min(age); 
+max_age = max(age);  
+histplot(41,age);
 
+1. Donnez sous forme d'histogrammes la distribution de l'expérience.
+exp = X(:,6);
+min_xp = min(exp);
+max_xp = max(exp);
+histplot(34,exp);
 
+2. Donnez les quartiles, interquatiles, min,max, moyenne, mediane, mode, et ecart type de l'age.
+Q = quart(age)
+IQR = Q(3) - Q(1) 
+min_age = min(age);
+max_age = max(age);
+mean(age)
+median(age)
 
+unique_vals = unique(age);
+freq = histc(ages, unique_vals);
+[max_freq, max_index] = max(freq);
+age_mode = unique_vals(max_index);
+
+3. A l'aide du paquet stixbox, tracez une boite à moustache pour l'age.
+ atomsInstall("stixbox");
+ boxplot(age);
+
+4. Refaire les questions précédentes pour l'expérience.
+Q = quart(exp) 
+IQR = Q(3) - Q(1)
+min_xp = min(exp); 
+max_xp = max(exp); 
+mean(exp)
+median(exp)
+
+Unique_vals = unique(exp);
+Freq = histc(exp, Unique_vals);
+[max_Freq, max_Index] = max(Freq);
+exp_mode = Unique_vals(max_Index);
+
+boxplot(exp);
 
 
 
