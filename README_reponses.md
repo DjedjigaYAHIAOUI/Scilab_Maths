@@ -342,93 +342,91 @@
 &#x2794; *Cela donne comme résultat:* 13.915267
 
 
-**Question 6:**
-
-Pour chaque genre, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
+**Question 6:** Pour chaque genre, donnez le salaire moyen, l'âge moyen et l'expérience moyenne.
 
 
 **Réponse:**
 
-indice_6_female = find(csvString(:,3) == "Female" )
+* indice_6_female = find(csvString(:,3) == "Female" )
 
 
-salaire_6_female = csvDouble(indice_6_female,7)
+* salaire_6_female = csvDouble(indice_6_female,7)
 
 
-mean(salaire_6_female)					                
+* mean(salaire_6_female)					                
 
-&#x2794; *Cela donne comme résultat:*107889.00
-
-
-age_6_female = csvDouble(indice_6_female,2)
+&#x2794; *Cela donne comme résultat:* 107889.00
 
 
-mean(age_6_female)					                    
-
-&#x2794; *Cela donne comme résultat:*32.626286
+* age_6_female = csvDouble(indice_6_female,2)
 
 
-exp_6_female = csvDouble(indice_6_female,6)
+* mean(age_6_female)					                    
+
+&#x2794; *Cela donne comme résultat:* 32.626286
 
 
-mean(exp_6_female)					                    
-
-&#x2794; *Cela donne comme résultat:*7.4201792
+* exp_6_female = csvDouble(indice_6_female,6)
 
 
+* mean(exp_6_female)					                    
 
-indice_6_male = find(csvString(:,3) == "Male" )
-
-
-salaire_6_male = csvDouble(indice_6_male,7)
+&#x2794; *Cela donne comme résultat:* 7.4201792
 
 
-mean(salaire_6_male)					                
 
-&#x2794; *Cela donne comme résultat:*121389.87
-
-
-age_6_male = csvDouble(indice_6_male,2)
+* indice_6_male = find(csvString(:,3) == "Male" )
 
 
-mean(age_6_male)					                    
-
-&#x2794; *Cela donne comme résultat:*34.416394
+* salaire_6_male = csvDouble(indice_6_male,7)
 
 
-exp_6_male = csvDouble(indice_6_male,6)
+* mean(salaire_6_male)					                
+
+&#x2794; *Cela donne comme résultat:* 121389.87
 
 
-mean(exp_6_male)					                    
-
-&#x2794; *Cela donne comme résultat:*8.6169662
+* age_6_male = csvDouble(indice_6_male,2)
 
 
-indice_6_other = find(csvString(:,3) == "Other" )
+* mean(age_6_male)					                    
+
+&#x2794; *Cela donne comme résultat:* 34.416394
 
 
-salaire_6_other = csvDouble(indice_6_other,7)
+* exp_6_male = csvDouble(indice_6_male,6)
 
 
-mean(salaire_6_other)					                
+* mean(exp_6_male)					                    
 
-&#x2794; *Cela donne comme résultat:*125869.86
-
-
-**.**age_6_other = csvDouble(indice_6_other,2)
+&#x2794; *Cela donne comme résultat:* 8.6169662
 
 
-mean(age_6_other)					                    
+* indice_6_other = find(csvString(:,3) == "Other" )
+
+
+* salaire_6_other = csvDouble(indice_6_other,7)
+
+
+* mean(salaire_6_other)					                
+
+&#x2794; *Cela donne comme résultat:* 125869.86
+
+
+* age_6_other = csvDouble(indice_6_other,2)
+
+
+* mean(age_6_other)					                    
 
 &#x2794; *Cela donne comme résultat:*39.571429
 
 
-exp_6_other = csvDouble(indice_6_other,6)
+* exp_6_other = csvDouble(indice_6_other,6)
 
 
-mean(exp_6_other)					                    
+* mean(exp_6_other)					                    
 
-&#x2794; *Cela donne comme résultat:*16.428571
+&#x2794; *Cela donne comme résultat:* 16.428571
 
   
 
