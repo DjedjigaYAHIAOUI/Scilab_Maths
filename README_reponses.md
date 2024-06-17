@@ -885,9 +885,182 @@
 
 ![ccc](4_2.png)
 
-ExO5
+# Exercice n°5:
 
-    Tracez un nuage de points (salaire,expérience) pour les hommes et les femmes, ainsi que les droites de regression associées. Commentaire ?
-    Tracez un nuage de points (salaire,expérince) et les droites de regression associées pour chaque niveau d'études. Commentaire ?
+**Question 2:** Tracez un nuage de points (salaire,expérience) pour les hommes et les femmes, ainsi que les droites de regression associées. Commentaire ?
 
 
+**Données:** 
+
+* experience = X(:, 6);
+
+* salaire = X(:, 7);
+
+* sexe = Y(:, 3); 
+
+
+&#x2794; Extraire les colonnes pertinentes (expérience, salaire, sexe)
+
+
+**Réponse:**
+
+
+
+
+* experience_hommes = experience(sexe == 'Male');
+
+* salaire_hommes = salaire(sexe == 'Male');
+
+* experience_femmes = experience(sexe == 'Female');
+
+* salaire_femmes = salaire(sexe == 'Female');
+
+&#x2794; Séparer les données pour les hommes et les femmes
+
+
+
+* X_hommes = [ones(length(experience_hommes), 1), experience_hommes];
+
+
+* coeffs_hommes = X_hommes \ salaire_hommes;
+
+
+* salaire_pred_hommes = X_hommes * coeffs_hommes; 
+
+
+&#x2794; Calcul de la régression linéaire pour les hommes (méthode des moindres carrés)
+
+
+
+
+* X_femmes = [ones(length(experience_femmes), 1), experience_femmes];
+
+* coeffs_femmes = X_femmes \ salaire_femmes;
+
+* salaire_pred_femmes = X_femmes * coeffs_femmes; 
+
+&#x2794;  Calcul de la régression linéaire pour les femmes (méthode des moindres carrés)
+
+
+
+clf;
+
+* plot(experience_hommes, salaire_hommes, 'bo'); // Nuage de points pour les hommes
+
+* plot(experience_hommes, salaire_pred_hommes, 'b-'); // Droite de régression pour les hommes
+
+* plot(experience_femmes, salaire_femmes, 'ro'); // Nuage de points pour les femmes
+
+* plot(experience_femmes, salaire_pred_femmes, 'r-'); // Droite de régression pour les femmes
+
+* xlabel('Expérience (années)');
+
+* ylabel('Salaire ($)');
+
+* title('Nuage de points et droites de régression par sexe');
+
+* legend(['Hommes', 'Régression Hommes', 'Femmes', 'Régression Femmes'], 'location', 'northwest');
+
+    
+&#x2794; Tracer le nuage de points et les droites de régression
+
+
+**Résultat:**
+![homme_femme](5_1_homme_femme.png)
+    
+
+**Question 2:**Tracez un nuage de points (salaire,expérince) et les droites de regression associées pour chaque niveau d'études. Commentaire ?
+
+**Données:**
+
+* X = csvRead('data.csv');
+* experience = X(:, 6);
+* salaire = X(:, 7);
+
+
+**Réponse:**
+
+* X = csvRead('data.csv');
+
+
+* experience = D(:, 6);
+
+
+* salaire = D(:, 7);
+
+
+&#x2794;  Charger les données
+
+
+* niveau_etudes = D(:, 4); 
+&#x2794; Supposons que la colonne 4 contient les niveaux d'études
+
+niveaux = unique(niveau_etudes);
+&#x2794; Obtenir les différents niveaux d'études
+
+*Tracer le nuage de points et les droites de régression pour chaque niveau d'études*
+
+clf;
+
+
+* for i = 1:length(niveaux)
+
+
+    niveau = niveaux(i);
+
+
+     indices_niveau = find(niveau_etudes == niveau);      ==> Sélectionner les indices pour ce niveau d'études
+
+
+    * experience_niveau = experience(indices_niveau);
+
+
+    * salaire_niveau = salaire(indices_niveau);
+
+
+    ==> Sélectionner les données pour ce niveau d'études
+
+
+    if isempty(experience_niveau) || isempty(salaire_niveau)
+        continue;
+        ==>  Si aucune donnée pour ce niveau, passer au suivant
+
+    end
+
+    * X_niveau = [ones(length(experience_niveau), 1), experience_niveau];
+    
+    
+    * coeffs_niveau = X_niveau \ salaire_niveau;
+    
+    
+    * salaire_pred_niveau = X_niveau * coeffs_niveau;
+
+   
+&#x2794; Calculer les coefficients de régression linéaire
+
+    * subplot(2, 2, i);
+
+
+    * plot(experience_niveau, salaire_niveau, 'o');
+
+
+    * plot(experience_niveau, salaire_pred_niveau, '-');
+
+
+    * xlabel('Expérience (années)');
+
+
+    * ylabel('Salaire ($)');
+
+
+    * title(['Niveau d''études : ', string(niveau)]);
+
+&#x2794; Tracer le nuage de points et la droite de régression
+
+
+end
+
+
+**Résultat:**
+
+![aa](5_2_niveau_etude.png)
