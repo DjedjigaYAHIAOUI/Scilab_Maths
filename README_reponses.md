@@ -507,7 +507,7 @@
 
 
 
-**Question 4:** Refaire les questions précédentes pour l'expérience.
+**Question 5:** Refaire les questions précédentes pour l'expérience.
 
 
 * Q = quart(exp) 
@@ -524,18 +524,205 @@
 
 * boxplot(exp);
 
-![boite à moustache](exo2_2.png)
+**Résultat:**
+
+
+![boite à moustache](exo_2q_5.png)
 
 
 
 
 
-EXO3
+# Exercice n°3:
 
-    Donnez, sous forme d'histogramme la distribution des salaires, suivant le genre.
-    Tracez un histogramme des salaires moyens suivants le niveau d'études.
-    Donnez les quartiles, interquatiles, min,max, moyenne, mediane, et ecart type des salaires. Tracez une boite à moustaches.
-    Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ?
+**Données:**
+|
+| ** X= csvRead('data.csv');**
+|
+|
+|* Y= csvRead('data.csv',',','.','string');
+|
+| 
+|* genre = Y(:,3);
+
+
+**Question 1:** Donnez, sous forme d'histogramme la distribution des salaires, suivant le genre.
+
+
+**Réponse:**
+
+
+*D_homme = D(genre == 'Male',:);
+
+
+*D_femme = D(genre == 'Female',:);
+
+
+*salaire_homme = D_homme(:,7);
+
+
+*salaire_femme = D_femme(:,7);
+
+
+*num_bins = 50;
+
+
+*subplot(2, 1, 1);
+
+
+*histplot(num_bins, salaire_homme);
+
+
+*title("Distribution des salaires pour les hommes");
+
+
+*xlabel("Salaire");
+
+
+*ylabel("Fréquence");
+
+
+*subplot(2, 1, 2); 
+
+
+*histplot(num_bins, salaire_femme);
+
+
+*title("Distribution des salaires pour les femmes");
+
+
+**xlabel("Salaire");
+
+
+*ylabel("Fréquence");
+
+**Résultat:**
+![Distribution des salaires selon les ages](3_1_histogramme_salaire.png)
+
+**Question 2:** Tracez un histogramme des salaires moyens suivants le niveau d'études.
+
+**Réponse:**
+
+*niveau_etudes = D(:, 4);
+
+
+*salaires = D(:, 7);
+
+
+*unique_niveaux = unique(niveau_etudes);
+
+
+*moy_salaire_par_niveau = zeros(size(unique_niveaux));
+
+*for i = 1:length(unique_niveaux)
+ 
+ 
+    moy_salaire_par_niveau(i) = mean(salaires(niveau_etudes == unique_niveaux(i)));
+
+
+end
+
+==>  bar(unique_niveaux, moy_salaire_par_niveau);
+
+*xlabel("Niveau d''études");
+*ylabel("Salaire moyen");
+*title("Salaire moyen par niveau d''études");
+
+**Résultat:**
+
+![salaire selon le niveau d'etude](3_2.png)
+
+
+**Question 3:**Donnez les quartiles, interquatiles, min,max, moyenne, mediane, et ecart type des salaires. Tracez une boite à moustaches.
+
+
+**Réponse:**
+
+*Q = quart(salaires)
+
+
+*IQR = Q(3) - Q(1);
+
+
+*min_salaire = min(salaires)
+
+
+*max_salaire = max(salaires)
+
+
+*mean(salaires)
+
+
+*median(salaires)
+
+
+*stdev(salaires)
+
+
+*boxplot(salaires)
+
+
+**Question 4:**Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ? 
+
+
+*QH = quart(salaire_homme)  
+
+
+*QF = quart(salaire_femme)
+
+
+*IQH = QH(3) - QH(1)   
+
+
+*IQF = QF(3) - QF(1)
+
+
+*min(salaire_homme)  
+
+
+*min(salaire_femme)   
+
+
+*max(salaire_homme)   
+
+
+*max(salaire_femme)   
+
+
+*mean(salaire_homme) 
+
+
+*mean(salaire_femme)  
+
+
+*median(salaire_homme) 
+
+
+*median(salaire_femme)  
+
+
+*stdev(salaire_homme) 
+
+
+*stdev(salaire_femme) 
+
+
+
+*Boite à moustache :*
+
+&#x2794;boxplot(salaire_homme);
+==> title("Boîte à moustaches des salaires des hommes");
+==> ylabel("Salaires");
+**Résultat:**
+
+![salaires hommes]()
+
+
+&#x2794;boxplot(salaire_femme);
+==> title("Boîte à moustaches des salaires des femmes");
+==> ylabel("Salaires");
+
+![salaire des femmes](salaire_femme_bon.png)
 
 ExO4
 
