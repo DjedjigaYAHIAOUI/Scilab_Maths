@@ -498,12 +498,12 @@
 
 
  * atomsInstall("stixbox");
- * boxplot(age);
+ * boxplot(age, "whisker", 0.25, "orientation", "horizontal");
 
 **Résultat:**
 
 
- ![moustache](moustache_age.png)
+ ![moustache](exo2q4.png)
 
 
 
@@ -522,22 +522,19 @@
 * [max_Freq, max_Index] = max(Freq);
 * exp_mode = Unique_vals(max_Index);
 
-* boxplot(exp);
+ * boxplot(exp, "whisker", 0.25, "orientation", "horizontal");
 
 **Résultat:**
 
 
-![boite à moustache](exo_2q_5.png)
-
-
-
+![boite à moustache](exo2q5.png)
 
 
 # Exercice n°3:
 
 **Données:**
 
-**X= csvRead('data.csv');**
+* X= csvRead('data.csv');
 * Y= csvRead('data.csv',',','.','string');
 
  
@@ -595,7 +592,10 @@
 * ylabel("Fréquence");
 
 **Résultat:**
+
+
 ![Distribution des salaires selon les ages](3_1_histogramme_salaire.png)
+
 
 **Question 2:** Tracez un histogramme des salaires moyens suivants le niveau d'études.
 
@@ -634,7 +634,7 @@
 ![salaire selon le niveau d'etude](3_2.png)
 
 
-**Question 3:**Donnez les quartiles, interquatiles, min,max, moyenne, mediane, et ecart type des salaires. Tracez une boite à moustaches.
+**Question 3:**   Donnez les quartiles, interquatiles, min,max, moyenne, mediane, et ecart type des salaires. Tracez une boite à moustaches.
 
 
 **Réponse:**
@@ -660,10 +660,15 @@
 * stdev(salaires)
 
 
-* boxplot(salaires)
+* boxplot(salaires, "orientation", "horizontal")
+
+//interquartiles//
+//equartilles//
 
 
-**Question 4:**Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ? 
+**Question 4:**  Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ? 
+
+**Réponse:**
 
 
 * QH = quart(salaire_homme)  
@@ -725,10 +730,160 @@
 
 ![salaire des femmes](salaire_femme_bon.png)
 
-ExO4
+#Exercice n°3:
 
-    Tracez un nuage de points (age,salaire), et la droite de regression correspondante. Quel est le coefficient de corrélation ?
-    Tracez un nuage de points (expérience,salaire), et la droite de regression correspondante. Quel est le coefficient de corrélation ?
+**Question 1:** Tracez un nuage de points (age,salaire), et la droite de regression correspondante. Quel est le coefficient de corrélation ?
+
+**Réponse:**  
+
+
+
+* disp(size(age));
+
+
+* disp(size(salaire)),;
+
+==> clf;
+
+
+&#x2794; Vérifier les dimensions
+
+
+&#x2794;Tracer le nuage de points avec les vraies données
+
+* scatter(age, salaire, 10, 'filled');
+
+
+* xlabel('Age');
+
+
+* ylabel('Salaire');
+
+* title('Nuage de points : Age vs Salaire');
+
+
+
+* A = [ones(length(age), 1), age];
+
+
+* coefficients = A \ salaire;
+
+* salaire_pred = A * coefficients;
+
+
+&#x2794;Tracer le nuage de points avec les vraies données
+
+
+
+
+* plot(age, salaire, '+'); 
+
+==> Tracer le nuage de points
+
+* plot(age, salaire_pred, '-r'); 
+
+==> Tracer la droite de régression
+
+* legend(['Données', 'Droite de régression'], 'Location', 'northwest');
+
+
+&#x2794; Tracer la droite de régression
+
+
+
+
+
+
+* mean_age = mean(age);
+
+* mean_salaire = mean(salaire);
+
+* numerateur = sum((age - mean_age) .* (salaire - mean_salaire));
+
+* denominateur = sqrt(sum((age - mean_age).^2) * sum((salaire - mean_salaire).^2));
+
+* correlation_coefficient = numerateur / denominateur;
+
+
+&#x2794; Calcul manuel du coefficient de corrélation
+
+
+* disp('Le coefficient de corrélation est :');
+
+* disp(correlation_coefficient);     
+
+**Ceci renvoie comme résultat:** 0.9376936
+
+
+&#x2794; Affichage du coefficient de corrélation
+
+**Résultat:**
+
+
+![droite salaire vs age](4_1_homme.png)
+   
+   
+   
+**Question 2:** Tracez un nuage de points (expérience,salaire), et la droite de regression correspondante. Quel est le coefficient de corrélation ?
+
+**Données:**
+
+* data = csvRead("data.csv"); 
+
+* experience = data(:, 6);
+
+* salaire = data(:, 7); 
+
+**Réponse:**
+
+
+* n = length(experience);
+
+* sum_x = sum(experience);
+
+* sum_y = sum(salaire);
+
+* sum_xy = sum(experience .* salaire);
+
+* sum_x2 = sum(experience.^2);
+
+* b = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x^2);
+
+* a = (sum_y - b * sum_x) / n;
+
+* clf;     ==>    permet de nettoyer 
+
+* plot(experience, salaire, 'b+'); 
+
+&#x2794; 'bo' pour des points bleus
+
+* xlabel('Expérience (années)');
+
+* ylabel('Salaire ($)');
+
+* title('Nuage de points et droite de régression');
+
+* y_pred = a + b * experience;
+
+* plot(experience, y_pred, 'r-'); 
+
+* legend(['Données', 'Régression linéaire'], 'location', 'northwest');
+
+* mean_experience = mean(experience);
+
+* mean_salaire = mean(salaire);
+
+* numerator = sum((experience - mean_experience) .* (salaire - mean_salaire));
+
+* denominator = sqrt(sum((experience - mean_experience).^2) * sum((salaire - mean_salaire).^2));
+
+* correlation = numerator / denominator;
+
+* disp("Coefficient de corrélation : " + string(correlation));
+
+**Cela renvoie comme coefficient de corrélation : 0.8089689**
+
+![ccc](4_2.png)
 
 ExO5
 
@@ -736,29 +891,3 @@ ExO5
     Tracez un nuage de points (salaire,expérince) et les droites de regression associées pour chaque niveau d'études. Commentaire ?
 
 
-
-Pour séparer les genres, je fais les commandes suivantes :
---> nb_bac1_homme = sum(etude == 1 & genre == "Male");
---> nb_bac2_homme = sum(etude == 2 & genre == "Male");
---> nb_bac3_hommes = sum(etude == 3 & genre == "Male");
-
---> nb_bac_femme = sum(etude == 0 & genre == "Female");
---> nb_bac1_femme = sum(etude == 1 & genre == "Female");
---> nb_bac2_femme = sum(etude == 2 & genre == "Female");
---> nb_bac3_femme = sum(etude == 3 & genre == "Female");
-
--> nb_bac_other = sum(etude == 0 & genre == "Other");
---> nb_bac1_other = sum(etude == 1 & genre == "Other");
---> nb_bac2_other = sum(etude == 2 & genre == "Other");
---> nb_bac3_other = sum(etude == 3 & genre == "Other");
-
-Je crée 3 tableaux pour séparer les genres sur 
---> y_hommes = [nb_bac_homme; nb_bac1_homme; nb_bac2_homme; nb_bac3_hommes];
---> y_femmes = [nb_bac_femme; nb_bac1_femme; nb_bac2_femme; nb_bac3_femme];
---> y_other = [nb_bac_other; nb_bac1_other; nb_bac2_other; nb_bac3_other];
-
-J'affiche ensuite le diagramme
---> legend("homme","femme","other")
---> bar([y_hommes y_femmes y_other], 'grouped');
-
-[def]: camembert_genre_1.1.png
