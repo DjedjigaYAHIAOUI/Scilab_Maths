@@ -536,14 +536,12 @@
 # Exercice n°3:
 
 **Données:**
-|
-| ** X= csvRead('data.csv');**
-|
-|
-|* Y= csvRead('data.csv',',','.','string');
-|
-| 
-|* genre = Y(:,3);
+
+**X= csvRead('data.csv');**
+* Y= csvRead('data.csv',',','.','string');
+
+ 
+* genre = Y(:,3);
 
 
 **Question 1:** Donnez, sous forme d'histogramme la distribution des salaires, suivant le genre.
@@ -552,49 +550,49 @@
 **Réponse:**
 
 
-*D_homme = D(genre == 'Male',:);
+* D_homme = D(genre == 'Male',:);
 
 
-*D_femme = D(genre == 'Female',:);
+* D_femme = D(genre == 'Female',:);
 
 
-*salaire_homme = D_homme(:,7);
+* salaire_homme = D_homme(:,7);
 
 
-*salaire_femme = D_femme(:,7);
+* salaire_femme = D_femme(:,7);
 
 
-*num_bins = 50;
+* num_bins = 50;
 
 
-*subplot(2, 1, 1);
+* subplot(2, 1, 1);
 
 
-*histplot(num_bins, salaire_homme);
+* histplot(num_bins, salaire_homme);
 
 
-*title("Distribution des salaires pour les hommes");
+* title("Distribution des salaires pour les hommes");
 
 
-*xlabel("Salaire");
+* xlabel("Salaire");
 
 
-*ylabel("Fréquence");
+* ylabel("Fréquence");
 
 
-*subplot(2, 1, 2); 
+* subplot(2, 1, 2); 
 
 
-*histplot(num_bins, salaire_femme);
+* histplot(num_bins, salaire_femme);
 
 
-*title("Distribution des salaires pour les femmes");
+* title("Distribution des salaires pour les femmes");
 
 
-**xlabel("Salaire");
+* xlabel("Salaire");
 
 
-*ylabel("Fréquence");
+* ylabel("Fréquence");
 
 **Résultat:**
 ![Distribution des salaires selon les ages](3_1_histogramme_salaire.png)
@@ -603,30 +601,33 @@
 
 **Réponse:**
 
-*niveau_etudes = D(:, 4);
+* niveau_etudes = D(:, 4);
 
 
-*salaires = D(:, 7);
+* salaires = D(:, 7);
 
 
-*unique_niveaux = unique(niveau_etudes);
+* unique_niveaux = unique(niveau_etudes);
 
 
-*moy_salaire_par_niveau = zeros(size(unique_niveaux));
+* moy_salaire_par_niveau = zeros(size(unique_niveaux));
 
-*for i = 1:length(unique_niveaux)
+* for i = 1:length(unique_niveaux)
  
  
-    moy_salaire_par_niveau(i) = mean(salaires(niveau_etudes == unique_niveaux(i)));
+    ==> moy_salaire_par_niveau(i) = mean(salaires(niveau_etudes == unique_niveaux(i)));
 
 
-end
+    ==>end
 
-==>  bar(unique_niveaux, moy_salaire_par_niveau);
+    ==>  bar(unique_niveaux, moy_salaire_par_niveau);
 
-*xlabel("Niveau d''études");
-*ylabel("Salaire moyen");
-*title("Salaire moyen par niveau d''études");
+* xlabel("Niveau d''études");
+
+* ylabel("Salaire moyen");
+
+* title("Salaire moyen par niveau d''études");
+
 
 **Résultat:**
 
@@ -638,73 +639,73 @@ end
 
 **Réponse:**
 
-*Q = quart(salaires)
+* Q = quart(salaires)
 
 
-*IQR = Q(3) - Q(1);
+* IQR = Q(3) - Q(1);
 
 
-*min_salaire = min(salaires)
+* min_salaire = min(salaires)
 
 
-*max_salaire = max(salaires)
+* max_salaire = max(salaires)
 
 
-*mean(salaires)
+* mean(salaires)
 
 
-*median(salaires)
+* median(salaires)
 
 
-*stdev(salaires)
+* stdev(salaires)
 
 
-*boxplot(salaires)
+* boxplot(salaires)
 
 
 **Question 4:**Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ? 
 
 
-*QH = quart(salaire_homme)  
+* QH = quart(salaire_homme)  
 
 
-*QF = quart(salaire_femme)
+* QF = quart(salaire_femme)
 
 
-*IQH = QH(3) - QH(1)   
+* IQH = QH(3) - QH(1)   
 
 
-*IQF = QF(3) - QF(1)
+* IQF = QF(3) - QF(1)
 
 
-*min(salaire_homme)  
+* min(salaire_homme)  
 
 
-*min(salaire_femme)   
+* min(salaire_femme)   
 
 
-*max(salaire_homme)   
+* max(salaire_homme)   
 
 
-*max(salaire_femme)   
+* max(salaire_femme)   
 
 
-*mean(salaire_homme) 
+* mean(salaire_homme) 
 
 
-*mean(salaire_femme)  
+* mean(salaire_femme)  
 
 
-*median(salaire_homme) 
+* median(salaire_homme) 
 
 
-*median(salaire_femme)  
+* median(salaire_femme)  
 
 
-*stdev(salaire_homme) 
+* stdev(salaire_homme) 
 
 
-*stdev(salaire_femme) 
+* stdev(salaire_femme) 
 
 
 
