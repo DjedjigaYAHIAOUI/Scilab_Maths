@@ -662,8 +662,7 @@
 
 * boxplot(salaires, "orientation", "horizontal")
 
-//interquartiles//
-//equartilles//
+
 
 
 **Question 4:**  Refaire la question précédente, en distingant les genres. Tracez une boîte à moustache pour chaque genre. Commentaires ? 
@@ -717,20 +716,32 @@
 *Boite à moustache :*
 
 &#x2794;boxplot(salaire_homme);
+
 ==> title("Boîte à moustaches des salaires des hommes");
+
+
 ==> ylabel("Salaires");
+
+
+==>boxplot(salaire_homme,"whisker",0.25,"orientation,"horizontal");
+
+
 **Résultat:**
 
-![salaires hommes]()
+![salaires hommes](exo3q4Hommr.png)
 
 
 &#x2794;boxplot(salaire_femme);
+
+
 ==> title("Boîte à moustaches des salaires des femmes");
+
+
 ==> ylabel("Salaires");
 
 ![salaire des femmes](salaire_femme_bon.png)
 
-#Exercice n°3:
+# Exercice n°4:
 
 **Question 1:** Tracez un nuage de points (age,salaire), et la droite de regression correspondante. Quel est le coefficient de corrélation ?
 
@@ -750,6 +761,7 @@
 
 
 &#x2794;Tracer le nuage de points avec les vraies données
+
 
 * scatter(age, salaire, 10, 'filled');
 
